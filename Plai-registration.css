@@ -1,0 +1,665 @@
+/* =======================
+   COLOR PALETTE + FONT
+======================= */
+:root {
+  --primary: #8b1c1c;
+  --primary-dark: #6f1515;
+  --text-main: #222;
+  --text-muted: #333;
+  --bg-light: #f8f6f4;
+  --bg-white: #ffffff;
+  --border-light: #ddd;
+}
+
+/* =======================
+   GLOBAL
+======================= */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 40px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 55px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-text {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* NAV LINKS */
+.navbar nav {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 10px 18px;
+  flex: 1;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* ARROW */
+.has-arrow {
+  position: relative;
+  padding-right: 14px;
+}
+
+.has-arrow::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+/* NAV ACTION */
+.nav-actions button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px 0 20px 0;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.nav-actions button:hover {
+  background: var(--primary-dark);
+}
+
+/* =======================
+   HAMBURGER
+======================= */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: -55px;
+}
+
+.nav-toggle-label span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+}
+
+
+/* =======================
+   LAYOUT
+======================= */
+.main-content {
+  padding: 50px 40px;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+/* LEFT CONTENT */
+.left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.benefits-card {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  margin-top: -30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.benefits-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* The small gold triangle/arrow before "Membership Benefits" */
+.benefits-title::before {
+  content: '▶';
+  color: #f1c40f;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+/* The Gold Checkmarks */
+.benefits-list li::before {
+  content: '✔';
+  color: #f1c40f;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.left-content .serif-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 50px;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.left-content .hero-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* RIGHT CONTENT */
+.right-content {
+  margin-top: 50px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* =======================
+   FORM CARD (FIXED)
+======================= */
+.white-card {
+  width: 100%;
+  max-width: 720px;
+  min-height: 670px;
+  height: auto;
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* =======================
+   STEP HEADER
+======================= */
+.step-header {
+  font-size: 20px;
+  color: var(--primary);
+  border-bottom: 2px solid #e3b23c;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* =======================
+   CHECKBOX
+======================= */
+.custom-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.custom-checkbox-container input {
+  display: none;
+}
+
+.checkmark-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: transparent;
+}
+
+.custom-checkbox-container input:checked + .checkmark-box {
+  background: var(--primary);
+  color: #fff;
+}
+
+.privacy-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+  margin: 25px 0;
+}
+
+/* =======================
+   STEPPER
+======================= */
+.stepper-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.step-bubbles {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.bubble.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.progress-line-container {
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.line {
+  height: 2px;
+  background: #ccc;
+}
+
+.nodes {
+  position: absolute;
+  top: -4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.node {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.node.active {
+  background: var(--primary);
+}
+
+
+/* =======================
+   FORM INPUTS (UPDATED)
+======================= */
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 0 auto 15px auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  font-size: 14px;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: var(--text-main);
+  display: block;
+  background: var(--bg-white);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    margin: 0 0 15px 0;
+  }
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.next-action-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.next-action-btn:hover {
+  background: var(--primary-dark);
+}
+
+.back-btn {
+  padding: 12px 20px;
+  background: #ccc;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* =======================
+   STEP VISIBILITY
+======================= */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  animation: fadeStep 0.3s ease-in-out;
+}
+
+@keyframes fadeStep {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DISABLED BUTTON */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .navbar nav,
+  .nav-actions {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-toggle:checked ~ nav,
+  .nav-toggle:checked ~ .nav-actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar nav {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =======================
+   FORM + CONTENT RESPONSIVE ONLY
+   (NAVBAR NOT TOUCHED)
+======================= */
+
+/* Scope responsiveness ONLY inside main-content */
+.main-content * {
+  box-sizing: border-box;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+
+  .main-content {
+    padding: 40px 30px;
+  }
+
+  .content-wrapper {
+    gap: 40px;
+  }
+
+  .left-image-wrap img {
+    max-width: 100%;
+  }
+
+  .white-card {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-content,
+  .right-content {
+    width: 100%;
+  }
+
+  .right-content {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .white-card {
+    max-width: 95%;
+  }
+}
+
+/* Mobile – FORM ONLY */
+@media (max-width: 768px) {
+
+  .main-content {
+    padding: 30px 20px;
+  }
+
+  .left-content {
+    text-align: center;
+  }
+
+  .left-image-wrap {
+    justify-content: center;
+  }
+
+  .white-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 20px;
+    height: auto;
+  }
+
+  /* Stepper scale */
+  .white-card .bubble {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .white-card .step-header {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .white-card .privacy-text {
+    font-size: 13px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .white-card {
+    padding: 20px 15px;
+  }
+
+  .white-card .bubble {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .white-card .next-action-btn,
+  .white-card .back-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* =======================
+   FOOTER BACKGROUND
+======================= */
+footer {
+  background: url("Images/BG5.png") left/cover no-repeat;
+  color: white; /* text readable on image */
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  padding: 40px;
+  position: relative;
+}
+
+/* Optional: add slight overlay for readability */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay for readability */
+  z-index: 0;
+}
+
+/* Make sure footer content is above overlay */
+footer .footer-cols {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+footer a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+footer a:hover {
+  color: var(--primary);
+}

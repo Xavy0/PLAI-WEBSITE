@@ -1,0 +1,704 @@
+/* =======================
+   COLOR PALETTE + FONT
+======================= */
+:root {
+  --primary: #8b1c1c;
+  --primary-dark: #6f1515;
+  --text-main: #222;
+  --text-muted: #333;
+  --bg-light: #f8f6f4;
+  --bg-white: #ffffff;
+  --border-light: #ddd;
+}
+
+/* =======================
+   GLOBAL
+======================= */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 40px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 55px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-text {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* NAV LINKS */
+.navbar nav {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 10px 18px;
+  flex: 1;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: var(--primary);
+}
+
+/* ARROW */
+.has-arrow {
+  position: relative;
+  padding-right: 14px;
+}
+
+.has-arrow::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+/* NAV ACTION */
+.nav-actions button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px 0 20px 0;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.nav-actions button:hover {
+  background: var(--primary-dark);
+}
+
+/* =======================
+   HAMBURGER
+======================= */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: -55px;
+}
+
+.nav-toggle-label span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+}
+
+
+/* =======================
+   HERO
+======================= */
+.hero {
+  padding: 60px;
+  background: url("Images/BG1.png") left/cover no-repeat;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  color: var(--text-dark);
+}
+
+.highlight {
+  color: var(--primary); /* #8b1c1c */
+}
+
+.hero-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 20px 0 20px 0;
+  cursor: pointer;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.primary {
+  background: var(--primary); /* #8b1c1c */
+  color: white;
+  border: none;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+/* =======================
+   PROGRAMS / NEWS / BENEFITS
+======================= */
+.programs,
+.news,
+.benefits {
+  padding: 60px 80px;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.program-cards,
+.news-cards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* =======================
+   CARD BASE
+======================= */
+.card,
+.news-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* =======================
+   CARD TOP (COLORED HALF)
+======================= */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: -25px;
+  padding: -25px;
+  font-weight: bold;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* CARD COLORS */
+.card.yellow .card-top {
+  background: #f5c400;
+  color: var(--text-dark);
+}
+
+.card.red .card-top {
+  background: var(--primary); /* #8b1c1c */
+  color:  white;
+}
+
+.card.dark .card-top {
+  background: #222;
+  color: white;
+}
+
+/* ICON */
+.card-top img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* TITLE */
+.card-top h3 {
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+/* =======================
+   CARD BOTTOM (WHITE HALF)
+======================= */
+.card-bottom {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: -14px;
+}
+
+.card-bottom p {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* BUTTON */
+.card-bottom button {
+  align-self: center;
+  background: var(--primary);
+  color:  white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px 8px 8px 0;
+  cursor: pointer;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* WHITE BUTTON VARIANT */
+.card.dark .card-bottom button {
+  background: var(--text-white);
+  color: var(--text-dark);
+  border: 1px solid #ccc;
+}
+
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .hero {
+    padding: 60px 40px;
+  }
+
+  .program-cards,
+  .news-cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .programs,
+  .news,
+  .benefits {
+    padding: 40px 24px;
+  }
+}
+/* =======================
+   PROGRAMS (SAME BG AS NEWS)
+======================= */
+.programs {
+  background: linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url("Images/BG2.png") center/cover no-repeat;
+  color: var(--text-white);
+  position: relative;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* PROGRAM SECTION TITLE */
+.programs h2 {
+  color: var(--text-dark); /* #000000 */
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* ENSURE CARDS STAY LIGHT */
+.programs .card {
+  background: #fff;
+  color: var(--text-dark);
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* =======================
+   PROGRAMS BACKGROUND IMAGE ONLY
+======================= */
+.programs {
+  background: url("Images/BG3.png") right/cover no-repeat;
+}
+
+/* =======================
+   WHAT'S NEW (IMAGE MATCH)
+======================= */
+.news {
+  background: url("Images/BG2.png") center/cover no-repeat;
+  color: var(--text-white);
+  position: relative;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+.news h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color:  white;
+}
+
+/* NEWS CARD LAYOUT */
+.news-card {
+  background: #fdf7f3;
+  border-radius: 14px;
+  padding: 24px;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* IMAGE + TITLE ROW */
+.news-card img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 14px;
+}
+
+.news-card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.news-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* READ MORE BUTTON */
+.news-card button {
+  background: var(--primary); /* #8b1c1c */
+  color:  white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* SECOND CARD DARK BUTTON (LIKE IMAGE) */
+.news-card:nth-child(2) button {
+  background: #222;
+}
+
+/* VIEW ALL PROGRAMS BUTTON */
+.view-all {
+  display: block;
+  margin: 40px auto 0;
+  background: transparent;
+  color:  white;
+  border: 2px solid var(--primary);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* RESPONSIVE MATCH */
+@media (max-width: 900px) {
+  .news-card {
+    text-align: center;
+  }
+
+  .news-card button {
+    align-self: center;
+  }
+}
+
+/* =======================
+   MEMBER BENEFITS
+======================= */
+.benefits {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+  background: url("Images/BG4.png") right/cover no-repeat;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: var(--text-dark);
+  flex-wrap: wrap;
+}
+
+.benefits-left {
+  max-width: 600px;
+}
+
+.benefits-left h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.benefits-left h2 span {
+  color: var(--primary);
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.benefits-list li img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.benefits-list li div strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.benefits-list li div p {
+  font-size: 14px;
+  color: #555;
+}
+
+.benefit-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.benefit-buttons .primary {
+  background: var(--primary);
+  color: var(--text-white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.benefit-buttons .secondary {
+  background: var(--text-white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RIGHT IMAGE */
+.benefits-right img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .benefits {
+    flex-direction: column;
+    align-items: flex-start;   /* keep text starting from left */
+    text-align: left;
+    padding: 40px 20px;
+
+    /* Background adjustments for mobile */
+    background-position: left top; /* show left side of image */
+    background-size: auto 100%;   /* maintain height, scale width automatically */
+    background-repeat: no-repeat;
+  }
+
+  .benefits-left {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .benefits-right img {
+    display: none; /* hide the human face on mobile so text is readable */
+  }
+
+
+
+  .benefits-left {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .benefits-list li {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .benefits-list li img {
+    margin-bottom: 5px;
+  }
+
+  .benefit-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .benefits-right img {
+    max-width: 250px;
+  }
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .benefits {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+  }
+
+  .benefits img {
+    margin-top: 24px;
+    max-width: 300px;
+  }
+
+  .benefit-buttons {
+    justify-content: center;
+  }
+}
+
+/* =======================
+   FOOTER BACKGROUND
+======================= */
+footer {
+  background: url("Images/BG5.png") left/cover no-repeat;
+  color: white; /* text readable on image */
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  padding: 40px;
+  position: relative;
+}
+
+/* Optional: add slight overlay for readability */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay for readability */
+  z-index: 0;
+}
+
+/* Make sure footer content is above overlay */
+footer .footer-cols {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+footer a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .navbar nav,
+  .nav-actions {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-toggle:checked ~ nav,
+  .nav-toggle:checked ~ .nav-actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar nav {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .programs,
+  .news,
+  .benefits {
+    padding: 30px 16px;
+  }
+
+  .benefits {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .benefits img {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Philippine Librarians Association, Inc.</title>
+  <link rel="stylesheet" href="Plai-registration.css">
+  <link rel="icon" type="image/png" href="Images/LOGO.jpg" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+  <img src="Images/LOGO.jpg" alt="PLAI Logo">
+</a>
+    <div class="logo-text">
+      <span class="main-text">PLAI</span>
+      <span class="sub-text">Philippine Librarians Association, Inc.</span>
+    </div>
+  </div>
+
+  <!-- menu for mobile -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#" class="has-arrow">About of PLAI</a>
+    <a href="#" class="has-arrow">Awards</a>
+    <a href="#" class="has-arrow">Membership</a>
+    <a href="#" class="has-arrow">Officers</a>
+    <a href="#" class="has-arrow">Congress</a>
+    <a href="#" class="has-arrow">National Book Week</a>
+    <a href="#">Activities</a>
+    <a href="#" class="has-arrow">PLAI Newsletter</a>
+    <a href="#">Archive</a>
+  </nav>
+
+<div class="nav-actions">
+  <a href="Plai-registration.html">
+    <button class="join">Join PLAI</button>
+  </a>
+</div>
+</header>
+<!-- MAIN -->
+<main class="main-content">
+  <div class="content-wrapper">
+
+    <!-- LEFT: Title + Image -->
+<section class="left-content">
+  <h1 class="serif-title">Membership<br>Registration</h1>
+  <p class="hero-desc">
+    Join PLAI and become part of a vibrant community of librarians and information 
+    professionals dedicated to advancing the profession in the Philippines.
+  </p>
+  <div class="left-image-wrap">
+    <img src="Images/BGR1.png" alt="PLAI Graphic">
+  </div>
+
+  <div class="benefits-card">
+    <h3 class="benefits-title">Membership Benefits:</h3>
+    <ul class="benefits-list">
+      <li>Access exclusive resources</li>
+      <li>Attend professional development events</li>
+      <li>Network with fellow librarians</li>
+    </ul>
+  </div>
+  </section>
+
+    <!-- RIGHT: FORM -->
+<!-- RIGHT: FORM -->
+<section class="right-content">
+  <div class="white-card">
+
+    <!-- STEP INDICATORS -->
+    <div class="stepper-wrapper">
+
+      <!-- STEP BUBBLES -->
+      <div class="step-bubbles">
+        <div class="bubble active">1</div>
+        <div class="bubble">2</div>
+        <div class="bubble">3</div>
+        <div class="bubble">4</div>
+      </div>
+
+      <!-- PROGRESS LINE -->
+      <div class="progress-line-container">
+        <div class="line"></div>
+        <div class="nodes">
+          <span class="node active"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+          <span class="node"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <form id="regForm">
+
+      <!-- STEP 1 -->
+      <div class="form-step active">
+        <h2 class="step-header">Step 1: Data Privacy Consent</h2>
+
+        <p class="privacy-text">
+          <strong>DATA PRIVACY CONSENT</strong><br><br>
+          By checking this box, I understand and agree that by completing this form, 
+          I am authorizing PLAI National to collect, use, share, and disclose my personal 
+          information for the PLAI Membership Directory.<br><br>
+          I consent to the storage of my personal information for as long as necessary 
+          to fulfill this purpose, in accordance with the Data Privacy Act of 2012 and 
+          its Implementing Rules and Regulations.
+        </p>
+
+        <label class="custom-checkbox-container">
+          <input type="checkbox" id="agree">
+          <span class="checkmark-box">✔</span>
+          I Agree
+        </label>
+
+        <div class="form-buttons">
+          <button type="button" class="next-action-btn" id="nextBtn" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step">
+        <h2 class="step-header">Step 2: Personal Identification</h2>
+
+        <label>Full Name</label>
+        <small>(Surname, First Name, Middle Name)</small>
+        <input type="text" placeholder="e.g. Dela Cruz, Juan, Santos" required>
+
+        <label>Birth Date</label>
+        <input type="date" required>
+
+        <label>Mailing Address (Home)</label>
+        <textarea placeholder="House No., Street, Barangay, City, Province" required></textarea>
+
+        <label>Personal Email Address</label>
+        <small>(Type N/A if not applicable)</small>
+        <input type="email" placeholder="example@email.com" required>
+
+        <label>Personal Contact Number</label>
+        <small>(Type N/A if not applicable)</small>
+        <input type="text" placeholder="09XXXXXXXXX" required>
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn">Back</button>
+          <button type="button" class="next-action-btn">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step">
+        <h2 class="step-header">Step 3: Institutional Information</h2>
+
+        <label>Name of Institution</label>
+        <input type="text" placeholder="Complete official name" required>
+
+        <label>Institution’s Address</label>
+        <input type="text" placeholder="Complete office address" required>
+
+        <label>Type of Institution</label>
+        <input type="text" placeholder="Government / Private" required>
+
+        <label>Institutional Contact Number</label>
+        <small>(Type N/A if not applicable)</small>
+        <input type="text" placeholder="Office contact number">
+
+        <label>Institutional Email Address</label>
+        <small>(Type N/A if not applicable)</small>
+        <input type="email" placeholder="office@email.com">
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn">Back</button>
+          <button type="button" class="next-action-btn">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step">
+        <h2 class="step-header">Step 4: Professional Details</h2>
+
+        <label>Designation / Position</label>
+        <small>(If Faculty, include academic rank)</small>
+        <input type="text" required>
+
+        <label>PRC License Number</label>
+        <input type="text" required>
+
+        <label>Date Obtained the License</label>
+        <input type="date" required>
+
+        <label>Date of License Expiration</label>
+        <input type="date" required>
+
+        <label>PLAI Regional Council</label>
+        <select required>
+          <option value="">Select Regional Council</option>
+          <option>Region I</option>
+          <option>Region II</option>
+          <option>Region III</option>
+          <option>Region IV</option>
+          <option>NCR</option>
+          <option>CAR</option>
+          <option>BARMM</option>
+        </select>
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn">Back</button>
+          <button type="submit" class="next-action-btn">Submit Registration</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+  </div>
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-cols">
+    <div class="footer-about">
+      <h3>About PLAI</h3>
+      <p>Promoting excellence in librarianship across the Philippines.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-follow">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="#" aria-label="X / Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 4.557a9.93 9.93 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.918 4.918 0 00-8.384 4.482A13.94 13.94 0 011.671 3.149a4.916 4.916 0 001.523 6.556 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.085 4.923 4.923 0 004.6 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A9.936 9.936 0 0024 4.557z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.23 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.459C23.207 24 24 23.226 24 22.271V1.729C24 .774 23.207 0 22.23 0zM7.06 20.452H3.56V9h3.5v11.452zM5.31 7.504a2.03 2.03 0 110-4.06 2.03 2.03 0 010 4.06zM20.452 20.452h-3.5v-5.607c0-1.338-.027-3.065-1.868-3.065-1.869 0-2.156 1.46-2.156 2.968v5.704h-3.5V9h3.36v1.561h.048c.468-.888 1.611-1.82 3.317-1.82 3.544 0 4.2 2.332 4.2 5.366v6.885z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.645.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.747 2.163 15.368 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608C4.516 2.496 5.783 2.225 7.149 2.163 8.415 2.105 8.796 2.163 12 2.163zm0-2.163C8.735 0 8.332.012 7.052.072 5.777.131 4.603.403 3.678 1.328 2.754 2.252 2.482 3.427 2.423 4.703 2.363 5.983 2.35 6.386 2.35 12s.012 6.017.072 7.297c.059 1.276.331 2.451 1.255 3.375.924.924 2.099 1.196 3.375 1.255 1.28.06 1.683.072 7.297.072s6.017-.012 7.297-.072c1.276-.059 2.451-.331 3.375-1.255.924-.924 1.196-2.099 1.255-3.375.06-1.28.072-1.683.072-7.297s-.012-6.017-.072-7.297c-.059-1.276-.331-2.451-1.255-3.375-.924-.924-2.099-1.196-3.375-1.255C18.017.012 17.614 0 12 0z"/>
+            <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
+            <circle cx="18.406" cy="5.594" r="1.44"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 PLAI. All rights reserved.</p>
+</footer>
+
+<script>
+  const steps = document.querySelectorAll(".form-step");
+  const nextBtns = document.querySelectorAll(".next-action-btn:not([type='submit'])");
+  const backBtns = document.querySelectorAll(".back-btn");
+  const bubbles = document.querySelectorAll(".bubble");
+  const nodes = document.querySelectorAll(".node");
+
+  const agree = document.getElementById("agree");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentStep = 0;
+  const totalSteps = steps.length; // ✅ AUTO = 4
+
+  // Enable Next button in Step 1
+  agree.addEventListener("change", () => {
+    nextBtn.disabled = !agree.checked;
+  });
+
+  // NEXT buttons (excluding submit)
+  nextBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep < totalSteps - 1) {
+        steps[currentStep].classList.remove("active");
+        bubbles[currentStep].classList.remove("active");
+
+        currentStep++;
+
+        steps[currentStep].classList.add("active");
+        bubbles[currentStep].classList.add("active");
+        nodes[currentStep].classList.add("active");
+      }
+    });
+  });
+
+  // BACK buttons
+  backBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep > 0) {
+        steps[currentStep].classList.remove("active");
+        bubbles[currentStep].classList.remove("active");
+        nodes[currentStep].classList.remove("active");
+
+        currentStep--;
+
+        steps[currentStep].classList.add("active");
+        bubbles[currentStep].classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
