@@ -138,7 +138,7 @@ body {
 ======================= */
 .hero {
   padding: 60px;
-  background: url("Images/BG1.png") left/cover no-repeat;
+  background: url("BG1.png") left/cover no-repeat;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
@@ -315,7 +315,7 @@ body {
       rgba(0,0,0,0.55),
       rgba(0,0,0,0.55)
     ),
-    url("Images/BG2.png") center/cover no-repeat;
+    url("BG2.png") center/cover no-repeat;
   color: var(--text-white);
   position: relative;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
@@ -339,14 +339,14 @@ body {
    PROGRAMS BACKGROUND IMAGE ONLY
 ======================= */
 .programs {
-  background: url("Images/BG3.png") right/cover no-repeat;
+  background: url("BG3.png") right/cover no-repeat;
 }
 
 /* =======================
    WHAT'S NEW (IMAGE MATCH)
 ======================= */
 .news {
-  background: url("Images/BG2.png") center/cover no-repeat;
+  background: url("BG2.png") center/cover no-repeat;
   color: var(--text-white);
   position: relative;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
@@ -440,7 +440,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 60px 80px;
-  background: url("Images/BG4.png") right/cover no-repeat;
+  background: url("BG4.png") right/cover no-repeat;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
   color: var(--text-dark);
   flex-wrap: wrap;
@@ -595,7 +595,7 @@ body {
    FOOTER BACKGROUND
 ======================= */
 footer {
-  background: url("Images/BG5.png") left/cover no-repeat;
+  background: url("BG5.png") left/cover no-repeat;
   color: white; /* text readable on image */
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
   padding: 40px;
@@ -702,3 +702,4 @@ footer a:hover {
   }
 
 }
+
