@@ -624,7 +624,7 @@ button:disabled {
    FOOTER BACKGROUND
 ======================= */
 footer {
-  background: url("Images/BG5.png") left/cover no-repeat;
+  background: url("BG5.png") left/cover no-repeat;
   color: white; /* text readable on image */
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
   padding: 40px;
@@ -663,3 +663,4 @@ footer a {
 footer a:hover {
   color: var(--primary);
 }
+
