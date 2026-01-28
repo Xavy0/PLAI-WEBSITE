@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAI Admin | Attendance Records</title>
+<link rel="stylesheet" href="records.css">
+  <link rel="icon" type="image/png" href="LOGO.jpg" />
+</head>
+<body>
+<header class="header">
+  <div class="header-logo">
+    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
+    <div class="logo-texts">
+      <div class="logo-text">PLAI</div>
+      <div class="full-name">Philippine Librarians Association, Inc.</div>
+    </div>
+  </div>
+<nav class="nav">
+  <ul class="nav-links">
+    <li><a href="">Dashboard</a></li>
+    <li><a href="membership.html">Memberships</a></li>
+    <li><a href="Attendance.html">Attendance</a></li>
+    <li><a href="records.html">Congress</a></li>
+  </ul>
+</nav>
+
+</header>
+
+<div class="admin-layout">
+  <div class="main-content">
+    <header class="dashboard-header">
+      <div>
+        <h1 class="maroon-text">Attendance Registry</h1>
+        <p>Manage and export attendance data</p>
+      </div>
+      <div class="export-actions no-print">
+        <button onclick="exportToCSV()" class="btn-secondary">📄 Export CSV</button>
+        <button onclick="window.print()" class="btn-primary">🖨️ Print Report</button>
+      </div>
+    </header>
+
+    <section class="filter-section no-print">
+      <div class="filter-row">
+        <div class="filter-item search-item">
+          <label>Search Name</label>
+          <input type="text" id="searchName" placeholder="Search attendee..." onkeyup="applyFilters()">
+        </div>
+        <div class="filter-item">
+          <label>Rows per page</label>
+          <select id="rowsPerPageSelect" onchange="changeRowsPerPage()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <div class="table-container">
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Profession Code</th>
+            <th>License Number</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Unit/s Earned</th>
+          </tr>
+        </thead>
+        <tbody id="attendanceBody">
+          <!-- Demo data will be generated here -->
+        </tbody>
+      </table>
+    </div>
+    <div id="pagination" class="pagination"></div>
+  </div>
+</div>
+
+<script>
+// ================= DEMO DATA GENERATION =================
+const demoAttendance = [];
+const firstNames = ["John","Maria","Eliah","Ana","David","Lily","Mark","Nina"];
+const lastNames = ["Buscas","Santos","Reyes","Cruz","Torres","Delos","Lopez","Gomez"];
+const professionCodes = ["LIB01","LIB02","LIB03","LIB04","LIB05"];
+const licenseNumbers = ["12345","67890","54321","98765","11223"];
+
+for(let i=1;i<=50;i++){
+  demoAttendance.push({
+    id: i,
+    firstName: firstNames[Math.floor(Math.random()*firstNames.length)],
+    middleName: String.fromCharCode(65+Math.floor(Math.random()*26)),
+    lastName: lastNames[Math.floor(Math.random()*lastNames.length)],
+    profession: professionCodes[Math.floor(Math.random()*professionCodes.length)],
+    license: licenseNumbers[Math.floor(Math.random()*licenseNumbers.length)],
+    timeIn: `${8+Math.floor(Math.random()*3)}:${Math.floor(Math.random()*60).toString().padStart(2,'0')}`,
+    timeOut: `${11+Math.floor(Math.random()*3)}:${Math.floor(Math.random()*60).toString().padStart(2,'0')}`,
+    units: 1 + Math.floor(Math.random()*5)
+  });
+}
+
+// ================= TABLE RENDERING =================
+let currentPage = 1;
+let rowsPerPage = 10;
+
+function renderTable(page=1){
+  const tbody = document.getElementById("attendanceBody");
+  tbody.innerHTML = "";
+
+  let filteredData = applySearchFilter(demoAttendance);
+
+  const start = (page-1)*rowsPerPage;
+  const end = rowsPerPage==="all"? filteredData.length : start+rowsPerPage;
+  const paginated = filteredData.slice(start,end);
+
+  paginated.forEach(item=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.id}</td>
+      <td>${item.firstName}</td>
+      <td>${item.middleName}</td>
+      <td>${item.lastName}</td>
+      <td>${item.profession}</td>
+      <td>${item.license}</td>
+      <td>${item.timeIn}</td>
+      <td>${item.timeOut}</td>
+      <td>${item.units}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  renderPagination(filteredData.length);
+}
+
+// ================= SEARCH FILTER =================
+function applySearchFilter(data){
+  const searchVal = document.getElementById("searchName").value.toLowerCase();
+  return data.filter(item=>{
+    return (item.firstName + " " + item.lastName).toLowerCase().includes(searchVal);
+  });
+}
+
+function applyFilters(){
+  currentPage = 1;
+  renderTable(currentPage);
+}
+
+// ================= PAGINATION =================
+function renderPagination(total){
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+  if(rowsPerPage==="all") return;
+
+  const pageCount = Math.ceil(total/rowsPerPage);
+  for(let i=1;i<=pageCount;i++){
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    if(i===currentPage) btn.classList.add("active");
+    btn.addEventListener("click",()=>{currentPage=i; renderTable(currentPage)});
+    pagination.appendChild(btn);
+  }
+}
+
+function changeRowsPerPage(){
+  const val = document.getElementById("rowsPerPageSelect").value;
+  rowsPerPage = val==="all"? "all": parseInt(val);
+  currentPage = 1;
+  renderTable(currentPage);
+}
+
+// ================= EXPORT TO CSV =================
+function exportToCSV(){
+  let csvContent = "data:text/csv;charset=utf-8,";
+  const headers = ["#","First Name","Middle Name","Last Name","Profession Code","License Number","Time In","Time Out","Units"];
+  csvContent += headers.join(",") + "\r\n";
+
+  demoAttendance.forEach(row=>{
+    const rowData = [row.id,row.firstName,row.middleName,row.lastName,row.profession,row.license,row.timeIn,row.timeOut,row.units];
+    csvContent += rowData.join(",") + "\r\n";
+  });
+
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href",encodedUri);
+  link.setAttribute("download","attendance_records.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// ================= INITIAL RENDER =================
+renderTable();
+</script>
+</body>
+</html>

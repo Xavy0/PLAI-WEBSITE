@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAI Admin | Congress Records</title>
+  <link rel="icon" type="image/png" href="LOGO.jpg" />
+<link rel="stylesheet" href="records.css">
+</head>
+<body>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-logo">
+    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
+    <div class="logo-texts">
+      <div class="logo-text">PLAI</div>
+      <div class="full-name">Philippine Librarians Association, Inc.</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <ul class="nav-links">
+    <li><a href="">Dashboard</a></li>
+    <li><a href="membership.html">Memberships</a></li>
+    <li><a href="Attendance.html">Attendance</a></li>
+    <li><a href="records.html">Congress</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="admin-layout">
+    <div class="main-content">
+        <header class="dashboard-header">
+            <div>
+                <h1 class="maroon-text">Congress 2026 Registry</h1>
+                <p>Manage and export participant data</p>
+            </div>
+            <div class="export-actions no-print">
+                <button onclick="exportToCSV()" class="btn-secondary">📄 Export CSV</button>
+                <button onclick="window.print()" class="btn-primary">🖨️ Print Report</button>
+            </div>
+        </header>
+
+        <section class="filter-section no-print">
+            <div class="filter-row">
+                <div class="filter-item">
+                    <label>Category</label>
+                    <select id="filterCategory" onchange="applyFilters()">
+                        <option value="all">All Participants</option>
+                        <option value="plai-nbot">PLAI-NBOT</option>
+                        <option value="house-delegates">House Delegates</option>
+                        <option value="plai-members">PLAI Members</option>
+                        <option value="non-plai-members">Non-PLAI Members</option>
+                        <option value="paper-presenters">Paper Presenters</option>
+                        <option value="plenary-speakers">Plenary Speakers</option>
+                        <option value="volunteers">Volunteers</option>
+                    </select>
+                </div>
+
+                <div class="filter-item">
+                    <label>Gender</label>
+                    <select id="filterGender" onchange="applyFilters()">
+                        <option value="all">All</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="filter-item search-item">
+                    <label>Search Name</label>
+                    <input type="text" id="searchName" placeholder="Search registrant..." onkeyup="applyFilters()">
+                </div>
+                <div class="filter-item">
+        <label>Rows per page</label>
+        <select id="rowsPerPageSelect" onchange="changeRowsPerPage()">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+                <div class="filter-item dropdown-container">
+                    <label>Columns to Display</label>
+                    <div class="dropdown">
+                        <button class="dropbtn">Select Fields ▼</button>
+                        <div class="dropdown-content" id="fieldOptions">
+                            <div class="checkbox-grid">
+                                <label><input type="checkbox" value="name" checked onchange="updateVisibleColumns()"> Full Name</label>
+                                <label><input type="checkbox" value="category" checked onchange="updateVisibleColumns()"> Category</label>
+                                <label><input type="checkbox" value="institution" checked onchange="updateVisibleColumns()"> Institution</label>
+                                <label><input type="checkbox" value="email" checked onchange="updateVisibleColumns()"> Email</label>
+                                <label><input type="checkbox" value="mobile" checked onchange="updateVisibleColumns()"> Mobile</label>
+                                <label><input type="checkbox" value="status" checked onchange="updateVisibleColumns()"> Status</label>
+                                <label><input type="checkbox" value="home" onchange="updateVisibleColumns()"> Home</label>
+                                <label><input type="checkbox" value="office" onchange="updateVisibleColumns()"> Office</label>
+                                <label><input type="checkbox" value="designation" onchange="updateVisibleColumns()"> Designation</label>
+                                <label><input type="checkbox" value="license" onchange="updateVisibleColumns()"> License</label>
+                                <label><input type="checkbox" value="council" onchange="updateVisibleColumns()"> Regional Council</label>
+                                <label><input type="checkbox" value="nb_position" onchange="updateVisibleColumns()"> NBOT Position</label>
+                                <label><input type="checkbox" value="rc_position" onchange="updateVisibleColumns()"> RC Position</label>
+                                <label><input type="checkbox" value="province" onchange="updateVisibleColumns()"> Province</label>
+                                <label><input type="checkbox" value="gender" onchange="updateVisibleColumns()"> Gender</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="table-container">
+            <table id="congressTable">
+                <thead>
+                    <tr>
+                        <th data-col="name">Full Name</th>
+                        <th data-col="category">Category</th>
+                        <th data-col="home">Home</th>
+                        <th data-col="office">Office</th>
+                        <th data-col="designation">Designation</th>
+                        <th data-col="institution">Institution</th>
+                        <th data-col="email">Email</th>
+                        <th data-col="mobile">Mobile</th>
+                        <th data-col="license">License</th>
+                        <th data-col="council">Regional Council</th>
+                        <th data-col="nb_position">NBOT Position</th>
+                        <th data-col="rc_position">RC Position</th>
+                        <th data-col="province">Province</th>
+                        <th data-col="gender">Gender</th>
+                        <th data-col="status">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="recordBody"></tbody>
+            </table>
+        </div>
+
+        <div id="pagination" class="pagination"></div>
+    </div>
+</div>
+
+<script src="recordsscript.js"></script>
+</body>
+</html>

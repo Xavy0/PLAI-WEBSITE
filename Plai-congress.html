@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLAI Congress 2026 Registration</title>
+
+  <!-- TAB LOGO -->
+  <link rel="icon" href="LOGO.jpg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Plai-congress.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-logo">
+    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
+    <div class="logo-texts">
+      <div class="logo-text">PLAI</div>
+      <div class="full-name">Philippine Librarians Association, Inc.</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="">Programs</a></li>
+    <li><a href="Plai-congress.html">Congress</a></li>
+    <li><a href="Evaluation.html">Evaluation</a></li>
+    <li><a href="">Benefits</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      PLAI CONGRESS 2026<br>
+      <span>REGISTRATION</span>
+    </h1>
+    <p>25–28 November 2026 | Manila, Philippines</p>
+<a href="#pricing" class="btn-primary">
+  REGISTER NOW
+</a>
+
+  </div>
+</section>
+
+<!-- ================= REGISTRATION CARDS ================= -->
+<section class="pricing">
+  <h2>PLAI CONGRESS 2026 REGISTRATION</h2>
+  <p class="subtitle">
+    Welcome to the official registration page for the PLAI Congress 2026. 
+    Join us for an engaging and insightful event, bringing together 
+    librarians and information professionals from across the Philippines and beyond. 
+    Register early to secure your spot.
+  </p>
+
+  <div class="pricing-cards" id="pricing">
+
+    <!-- PLAI-NBOT -->
+    <div class="price-card">
+      <h3>PLAI-NBOT</h3>
+      <p class="price"></p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Regional Council info</li>
+        <li> Position in NBOT</li>
+      </ul>
+      <button onclick="openForm('plai-nbot')">REGISTER</button>
+    </div>
+
+    <!-- House of Delegates -->
+    <div class="price-card">
+      <h3>House of Delegates</h3>
+      <p class="price"></p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Regional Council info</li>
+        <li> File upload: Payment & Receipt</li>
+      </ul>
+      <button onclick="openForm('house-delegates')">REGISTER</button>
+    </div>
+
+    <!-- PLAI Members -->
+    <div class="price-card">
+      <h3>PLAI Members</h3>
+      <p class="price">7,000 / person</p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Regional Council info</li>
+        <li> File upload: Payment & Receipt</li>
+      </ul>
+      <button onclick="openForm('plai-members')">REGISTER</button>
+    </div>
+
+<!-- Non-PLAI Members -->
+<div class="price-card">
+  <h3>Non-PLAI Members</h3>
+  <p class="price">7,500 / person</p>
+  <ul>
+    <li>Full registration details</li>
+    <li>Regional Council info</li>
+    <li>File upload: Payment</li>
+  </ul>
+  <button onclick="openForm('non-plai-members')">REGISTER</button>
+</div>
+
+
+    <!-- Paper Presenters -->
+    <div class="price-card">
+      <h3>Paper Presenters</h3>
+      <p class="price"></p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Regional Council info</li>
+        <li> License number (if applicable)</li>
+      </ul>
+      <button onclick="openForm('paper-presenters')">REGISTER</button>
+    </div>
+
+    <!-- Plenary Speakers -->
+    <div class="price-card">
+      <h3>Plenary Speakers</h3>
+      <p class="price"></p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Regional Council info</li>
+      </ul>
+      <button onclick="openForm('plenary-speakers')">REGISTER</button>
+    </div>
+
+    <!-- Volunteers / Host Region Committee -->
+    <div class="price-card">
+      <h3>Volunteers / Host Region Committee</h3>
+      <p class="price"></p>
+      <ul>
+        <li> Full registration details</li>
+        <li> Province selection</li>
+        <li> License number (if applicable)</li>
+      </ul>
+      <button onclick="openForm('volunteers')">REGISTER</button>
+    </div>
+<div class="event-card">
+            <div class="card-header">EVENT INFO</div>
+            <div class="card-body">
+                <p class="event-date">November 25–28, 2026</p>
+                <p class="event-location">SMX Convention Center • Manila</p>
+                <p class="fee-includes-title">Registration fee includes:</p>
+                <ul>
+                    <li>Access to all sessions and workshops</li>
+                    <li>Conference kit (including program booklet, tote bag, and other materials)</li>
+                    <li>Certificate of attendance</li>
+                    <li>Networking opportunities</li>
+                </ul>
+                <button class="learn-more-btn">LEARN MORE</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="registrationFormModal">
+  <div class="modal-content">
+    
+    <!-- LEFT PANEL -->
+    <div class="modal-left-panel">
+      <div class="gold-corner"></div>
+
+      <!-- Logo -->
+      <div class="modal-logo">
+        <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img-modal">
+        <div class="form-logo-texts">
+          <div class="form-form-text">PLAI</div>
+          <div class="form-full-name">Philippine Librarians Association, Inc.</div>
+        </div>
+      </div>
+      
+      <!-- Branding Text -->
+      <div class="branding-text">
+        <h2>PLAI Congress 2023 Registration</h2>
+        <p class="privacy-statement">
+          <strong>Personal Data Declaration Policy:</strong> By accomplishing this form, I give my consent to the Philippine Librarians Association, Inc. (PLAI) 
+          to collect, store, and manage information about me in preparation to the upcoming PLAI Congress 2023.
+        </p>
+      </div>
+
+      <!-- Benefits Card -->
+      <div class="benefits-card">
+<h3>Congress Information</h3>
+
+<ul>
+    <li>
+      PLAI Congress Website:
+      <a href="https://www.plai.org.ph/plaicongress2022" target="_blank">
+        www.plai.org.ph/plaicongress2022
+      </a>
+    </li>
+    <li>
+      Official Facebook Page:
+      <a href="https://www.facebook.com/PLAICongress" target="_blank">
+        www.facebook.com/PLAICongress
+      </a>
+    </li>
+    <li>
+      For more information, email us at:
+      <a href="mailto:plaicongress2022@gmail.com">
+        plaicongress2022@gmail.com
+      </a>
+    </li>
+  </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="modal-right-panel">
+      <!-- Close Button -->
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+
+      <!-- Form Title -->
+      <h3 id="formTitle">PLAI CONGRESS 2026 REGISTRATION</h3>
+      
+<form id="registrationForm">
+
+  <!-- AGREEMENT (MUST BE FIRST) -->
+<div class="agreement-row">
+  <span class="checkbox-wrap">
+    <input type="checkbox" id="agreePolicy">
+  </span>
+  <label for="agreePolicy">
+    I agree to the <strong>Data Declaration Policy</strong>
+  </label>
+</div>
+
+
+  <!-- ALL FORM FIELDS WRAPPED -->
+  <div id="formFieldsWrapper" class="disabled">
+    <!-- Dynamic Fields -->
+    <div id="participantFields"></div>
+
+    <button type="submit" class="btn-submit-gold">
+      SUBMIT REGISTRATION
+    </button>
+  </div>
+
+</form>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ATTENDANCE TOGGLE BAR -->
+<div class="attendance-bar" onclick="toggleAttendance()">
+  Attendance
+</div>
+
+<!-- ATTENDANCE PANEL -->
+<aside class="attendance-panel" id="attendancePanel">
+  <div class="panel-header" onclick="toggleAttendance()">
+    Attendance Log
+  </div>
+
+  <form class="attendance-form">
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Middle Name">
+    <input type="text" placeholder="Last Name" required>
+
+    <input type="text" placeholder="Profession Code">
+    <input type="text" placeholder="License Number">
+
+    <div class="time-row">
+      <input type="time">
+      <input type="time">
+    </div>
+
+    <input type="number" placeholder="Unit/s Earned">
+
+    <button type="submit">Submit</button>
+  </form>
+</aside>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-cols">
+    <div class="footer-about">
+      <h3>About PLAI</h3>
+      <p>Promoting excellence in librarianship across the Philippines.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-follow">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="#" aria-label="X / Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 4.557a9.93 9.93 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.918 4.918 0 00-8.384 4.482A13.94 13.94 0 011.671 3.149a4.916 4.916 0 001.523 6.556 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.085 4.923 4.923 0 004.6 3.417A9.867 9.867 0 010 19.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A9.936 9.936 0 0024 4.557z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="#" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.23 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.459C23.207 24 24 23.226 24 22.271V1.729C24 .774 23.207 0 22.23 0zM7.06 20.452H3.56V9h3.5v11.452zM5.31 7.504a2.03 2.03 0 110-4.06 2.03 2.03 0 010 4.06zM20.452 20.452h-3.5v-5.607c0-1.338-.027-3.065-1.868-3.065-1.869 0-2.156 1.46-2.156 2.968v5.704h-3.5V9h3.36v1.561h.048c.468-.888 1.611-1.82 3.317-1.82 3.544 0 4.2 2.332 4.2 5.366v6.885z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.645.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.747 2.163 15.368 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608C4.516 2.496 5.783 2.225 7.149 2.163 8.415 2.105 8.796 2.163 12 2.163zm0-2.163C8.735 0 8.332.012 7.052.072 5.777.131 4.603.403 3.678 1.328 2.754 2.252 2.482 3.427 2.423 4.703 2.363 5.983 2.35 6.386 2.35 12s.012 6.017.072 7.297c.059 1.276.331 2.451 1.255 3.375.924.924 2.099 1.196 3.375 1.255 1.28.06 1.683.072 7.297.072s6.017-.012 7.297-.072c1.276-.059 2.451-.331 3.375-1.255.924-.924 1.196-2.099 1.255-3.375.06-1.28.072-1.683.072-7.297s-.012-6.017-.072-7.297c-.059-1.276-.331-2.451-1.255-3.375-.924-.924-2.099-1.196-3.375-1.255C18.017.012 17.614 0 12 0z"/>
+            <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
+            <circle cx="18.406" cy="5.594" r="1.44"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 PLAI. All rights reserved.</p>
+</footer>
+<!-- JS -->
+ <script>
+function toggleAttendance() {
+  document.getElementById("attendancePanel").classList.toggle("show");
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

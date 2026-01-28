@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAI Admin | Membership Records</title>
+  <link rel="icon" type="image/png" href="LOGO.jpg" />
+<link rel="stylesheet" href="records.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
+    <div class="logo-texts">
+      <div class="logo-text">PLAI</div>
+      <div class="full-name">Philippine Librarians Association, Inc.</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="">Dashboard</a></li>
+      <li><a href="membership.html">Memberships</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="congress.html">Congress</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="admin-layout">
+  <div class="main-content">
+    <header class="dashboard-header">
+      <div>
+        <h1 class="maroon-text">Membership Registry</h1>
+        <p>Manage and export member data</p>
+      </div>
+      <div class="export-actions no-print">
+        <button onclick="exportToCSV()" class="btn-secondary">📄 Export CSV</button>
+      </div>
+    </header>
+
+    <!-- FILTERS -->
+    <section class="filter-section no-print">
+      <div class="filter-row">
+        <div class="filter-item">
+          <label>PLAI Regional Council</label>
+          <select id="filterCouncil" onchange="applyFilters()">
+            <option value="all">All</option>
+            <option>Region I</option>
+            <option>Region II</option>
+            <option>Region III</option>
+            <option>Region IV</option>
+            <option>NCR</option>
+            <option>CAR</option>
+            <option>BARMM</option>
+            <option>Region VI</option>
+            <option>Region VII</option>
+            <option>Region IX</option>
+            <option>Region XI</option>
+          </select>
+        </div>
+
+        <div class="filter-item search-item">
+          <label>Search Name</label>
+          <input type="text" id="searchName" placeholder="Search member..." onkeyup="applyFilters()">
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLE -->
+    <div class="table-container">
+      <table id="membershipTable">
+        <thead>
+          <tr>
+            <th>Consent</th>
+            <th>Full Name</th>
+            <th>Mailing Address</th>
+            <th>Birth Date</th>
+            <th>Personal Email</th>
+            <th>Personal Contact</th>
+            <th>Institution</th>
+            <th>Institution Address</th>
+            <th>Type of Institution</th>
+            <th>Designation</th>
+            <th>PRC License</th>
+            <th>Date Obtained</th>
+            <th>Institution Contact</th>
+            <th>Institution Email</th>
+            <th>Regional Council</th>
+            <th>Date of License Expiration</th>
+          </tr>
+        </thead>
+        <tbody id="membershipBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="membershipScript.js"></script>
+</body>
+</html>

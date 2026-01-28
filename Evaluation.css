@@ -1,0 +1,361 @@
+/* ===============================
+   ROOT VARIABLES
+================================ */
+:root {
+  --plai-maroon: #600000;
+  --plai-gold: #d4af37;
+  --bg-light: #ffffff;
+  --text-dark: #333;
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* ===============================
+   HEADER / LOGO
+================================ */
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.logo-img {
+  width: 70px;
+  height: auto;
+}
+
+.logo-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.full-name {
+  font-size: 14px;
+  color: var(--plai-maroon);
+  margin-top: 2px;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.nav {
+  background-color: rgba(154, 42, 42, 0.95);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 12px 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links li a{
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none; /* ensures no underline */
+}
+
+.nav-links li:hover {
+  text-decoration: none; /* remove underline on hover */
+  /* you can optionally add a color change instead */
+  color: #d4af37; /* example: gold on hover */
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   HEADER CONTENT
+================================ */
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.heading h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.theme {
+  font-style: italic;
+  color: var(--plai-maroon);
+  margin: 10px 0 15px;
+  font-size: 14px;
+}
+
+/* ===============================
+   SECTION TITLES
+================================ */
+h3 {
+  margin-top: 30px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--plai-maroon);
+  font-size: 18px;
+}
+
+/* ===============================
+   RATING SCALE BLOCK
+================================ */
+.scale {
+  background: #fafafa;
+  border-left: 5px solid var(--plai-maroon);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.scale ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scale li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* ===============================
+   FORM ELEMENTS
+================================ */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--plai-maroon);
+  box-shadow: 0 0 4px rgba(96, 0, 0, 0.25);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===============================
+   CHECKBOX GRID
+================================ */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+/* ===============================
+   RATING BLOCKS
+================================ */
+.rating-block {
+  margin: 18px 0;
+  padding: 12px 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.rating-block p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.rating {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.rating input {
+  margin-right: 3px;
+}
+
+/* ===============================
+   SUBMIT BUTTON
+================================ */
+button[type="submit"] {
+  margin: 30px auto 0 auto; /* top margin 30px, auto left/right to center */
+  display: block;           /* make margin auto work */
+  width: 60%;               /* keeps it 60% width on larger screens */
+  padding: 14px;
+  background: linear-gradient(135deg, var(--plai-maroon), #8a0000);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #8a0000, var(--plai-maroon));
+  transform: translateY(-1px);
+}
+.Instructions{
+    text-align: left;
+}
+/* ===============================
+   MOBILE ADJUSTMENT
+================================ */
+@media (max-width: 480px) {
+  button[type="submit"] {
+    width: 90%;  /* make it almost full-width on small screens */
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .heading h1 {
+    font-size: 22px;
+  }
+
+  .heading h2 {
+    font-size: 17px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+
+  .rating {
+    gap: 8px;
+  }
+
+  .header-logo {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .logo-img {
+    width: 60px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .full-name {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0;
+  }
+
+  .nav-links li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .heading h1 {
+    font-size: 20px;
+  }
+
+  .heading h2 {
+    font-size: 16px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  textarea {
+    min-height: 80px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
