@@ -4,31 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PLAI Admin | Membership Records</title>
-  <link rel="icon" type="image/png" href="LOGO.jpg" />
+  <link rel="icon" type="image/png" href="LOGO.png" />
 <link rel="stylesheet" href="records.css">
+<link rel="stylesheet" href="admin.css">
 </head>
 <body>
+<div class="layout">
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-logo">
-    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
-    <div class="logo-texts">
-      <div class="logo-text">PLAI</div>
-      <div class="full-name">Philippine Librarians Association, Inc.</div>
-    </div>
-  </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
 
-  <nav class="nav">
-    <ul class="nav-links">
-      <li><a href="">Dashboard</a></li>
-      <li><a href="membership.html">Memberships</a></li>
-      <li><a href="Attendance.html">Attendance</a></li>
-      <li><a href="records.html">Congress</a></li>
-    </ul>
-  </nav>
-</header>
+        <div class="sidebar-top">
+            <div class="logo">
+                <img src="LOGO.png">
+                <h2>PLAI</h2>
+            </div>
 
+            <nav>
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="membership.html" class="active">Members</a>
+                <a href="records.html">Congress</a>
+                <a href="Attendance.html">Attendance</a>
+                <a href="news.html">News</a>
+                <a href="resources.html">Resources</a>
+            </nav>
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="sidebar-bottom">
+            <button class="logout">Logout</button>
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+            <div class="admin">
+                <span>Admin</span>
+                <img src="https://i.pravatar.cc/40">
+            </div>
+        </header>
 <!-- MAIN CONTENT -->
 <div class="admin-layout">
   <div class="main-content">
@@ -41,7 +61,6 @@
         <button onclick="exportToCSV()" class="btn-secondary">📄 Export CSV</button>
       </div>
     </header>
-
     <!-- FILTERS -->
     <section class="filter-section no-print">
       <div class="filter-row">
@@ -67,6 +86,40 @@
           <label>Search Name</label>
           <input type="text" id="searchName" placeholder="Search member..." onkeyup="applyFilters()">
         </div>
+
+        <div class="filter-item dropdown-container">
+    <label>Columns to Display</label>
+
+    <div class="dropdown">
+        <button class="dropbtn">Select Fields ▼</button>
+
+        <div class="dropdown-content" id="fieldOptions">
+
+            <div class="checkbox-grid">
+
+                <!-- DEFAULT CHECKED -->
+                <label><input type="checkbox" value="name" checked onchange="updateVisibleColumns()"> Full Name</label>
+                <label><input type="checkbox" value="personalEmail" checked onchange="updateVisibleColumns()"> Personal Email</label>
+                <label><input type="checkbox" value="personalContact" checked onchange="updateVisibleColumns()"> Personal Contact</label>
+                <label><input type="checkbox" value="institution" checked onchange="updateVisibleColumns()"> Institution</label>
+                <label><input type="checkbox" value="instAddress" onchange="updateVisibleColumns()"> Institution Address</label>
+                <label><input type="checkbox" value="type" checked onchange="updateVisibleColumns()"> Type of Institution</label>
+                <label><input type="checkbox" value="designation" checked onchange="updateVisibleColumns()"> Designation</label>
+
+                <!-- OPTIONAL -->
+                <label><input type="checkbox" value="mailing" onchange="updateVisibleColumns()"> Mailing Address</label>
+                <label><input type="checkbox" value="birth" onchange="updateVisibleColumns()"> Birth Date</label>
+                <label><input type="checkbox" value="license" onchange="updateVisibleColumns()"> PRC License</label>
+                <label><input type="checkbox" value="dateObtained" onchange="updateVisibleColumns()"> Date Obtained</label>
+                <label><input type="checkbox" value="instContact" onchange="updateVisibleColumns()"> Institution Contact</label>
+                <label><input type="checkbox" value="instEmail" onchange="updateVisibleColumns()"> Institution Email</label>
+                <label><input type="checkbox" value="council" onchange="updateVisibleColumns()"> Regional Council</label>
+                <label><input type="checkbox" value="licenseExp" onchange="updateVisibleColumns()"> License Expiration</label>
+
+            </div>
+        </div>
+    </div>
+</div>
       </div>
     </section>
 
@@ -74,7 +127,7 @@
     <div class="table-container">
       <table id="membershipTable">
         <thead>
-          <tr>
+          <tr id="tableHeader">
             <th>Consent</th>
             <th>Full Name</th>
             <th>Mailing Address</th>
@@ -99,6 +152,7 @@
   </div>
 </div>
 
+<script src="admin.js"></script>
 <script src="membershipScript.js"></script>
 </body>
 </html>

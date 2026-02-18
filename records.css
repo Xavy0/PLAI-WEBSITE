@@ -1,82 +1,7 @@
 :root {
     --maroon: #9A2A2A;
     --gold: #d4af37;
-    --light-bg: #fdfaf3;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    color: #333;
-}
-
-/* =======================
-   HEADER
-======================= */
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: center;
-    padding: 8px;
-}
-
-.logo-img {
-    width: 70px;
-    height: auto;
-}
-
-.logo-texts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.logo-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000;
-    line-height: 1.1;
-}
-
-.full-name {
-    font-size: 14px;
-    color: #9A2A2A;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-}
-
-/* =======================
-   NAVBAR
-======================= */
-.nav {
-    background-color: rgba(154, 42, 42, 0.95);
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-    background-repeat: repeat;
-    background-blend-mode: overlay;
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    padding: 14px 0;
-    margin: 0;
-}
-
-.nav-links li a {
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none; /* removes underline */
-}
-
-.nav-links li a:hover {
-  text-decoration: none; /* ensures no underline on hover */
-  color: #f0d1d1; /* optional: slight color change on hover */
+    --light-bg: #ffffff;
 }
 
 
@@ -110,7 +35,7 @@ body {
    FILTER SECTION
 ======================= */
 .filter-section {
-    background: #fff;
+    background: #ffffff;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;

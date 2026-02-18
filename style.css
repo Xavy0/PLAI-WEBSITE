@@ -59,11 +59,51 @@ body {
   font-size: 12px;
   color: var(--primary);
 }
+/* =======================
+   DROPDOWN (SAFE)
+======================= */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+/* dropdown box */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 999;
+  padding: 6px 0;
+}
+
+/* dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #f5f5f5;
+  color: var(--primary);
+}
+
+/* show on hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
 /* NAV LINKS */
 .navbar nav {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   gap: 10px 18px;
   flex: 1;
 }
@@ -701,4 +741,146 @@ footer a:hover {
     width: 100%;
   }
 
+}
+/* =======================
+   MOBILE DROPDOWN FIX
+======================= */
+@media (max-width: 900px) {
+
+  /* make dropdown full width */
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  /* hide dropdown by default */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+    padding-left: 15px;
+    background: #f8f8f8;
+  }
+
+  /* show when active */
+  .nav-dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+}
+/* ==============================
+   EVENTS CAROUSEL — PLAI THEME FIXED
+   ============================== */
+
+.events {
+  padding: 70px 0;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.events h2 {
+  font-size: 32px;
+  margin-bottom: 45px;
+  color: var(--text-main);
+}
+
+/* CENTER THE CAROUSEL */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 1100px;   /* ⭐ KEY FIX */
+  margin: auto;        /* ⭐ CENTER */
+  padding: 0 20px;
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+/* CARD SIZE FIX */
+.event-card {
+  flex: 0 0 320px;     /* ⭐ FIXED WIDTH */
+  background: var(--bg-white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.event-content {
+  padding: 22px;
+  text-align: left;
+}
+
+.event-content h3 {
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.event-content p {
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.event-content button {
+  background: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.event-content button:hover {
+  background: var(--primary-dark);
+}
+
+/* ARROWS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  border: none;
+  font-size: 20px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: -15px; }
+.next { right: -15px; }
+
+/* MOBILE */
+@media(max-width: 768px){
+  .carousel {
+    max-width: 100%;
+  }
+
+  .event-card {
+    flex: 0 0 85%;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
 }

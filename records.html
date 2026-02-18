@@ -4,29 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PLAI Admin | Congress Records</title>
-  <link rel="icon" type="image/png" href="LOGO.jpg" />
+  <link rel="icon" type="image/png" href="LOGO.png" />
 <link rel="stylesheet" href="records.css">
+<link rel="stylesheet" href="admin.css">
 </head>
 <body>
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="header-logo">
-    <img src="LOGO.jpg" alt="PLAI Logo" class="logo-img">
-    <div class="logo-texts">
-      <div class="logo-text">PLAI</div>
-      <div class="full-name">Philippine Librarians Association, Inc.</div>
-    </div>
-  </div>
+<div class="layout">
 
-  <nav class="nav">
-    <ul class="nav-links">
-    <li><a href="">Dashboard</a></li>
-    <li><a href="membership.html">Memberships</a></li>
-    <li><a href="Attendance.html">Attendance</a></li>
-    <li><a href="records.html">Congress</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="logo">
+                <img src="LOGO.png">
+                <h2>PLAI</h2>
+            </div>
+
+            <nav>
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="membership.html">Members</a>
+                <a href="records.html" class="active">Congress</a>
+                <a href="Attendance.html">Attendance</a>
+                <a href="news.html">News</a>
+                <a href="resources.html">Resources</a>
+            </nav>
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="sidebar-bottom">
+            <button class="logout">Logout</button>
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+            <div class="admin">
+                <span>Admin</span>
+                <img src="https://i.pravatar.cc/40">
+            </div>
+        </header>
 <div class="admin-layout">
     <div class="main-content">
         <header class="dashboard-header">
@@ -134,7 +156,7 @@
         <div id="pagination" class="pagination"></div>
     </div>
 </div>
-
+<script src="admin.js"></script>
 <script src="recordsscript.js"></script>
 </body>
 </html>

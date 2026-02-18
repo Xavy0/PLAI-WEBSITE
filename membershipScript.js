@@ -1,6 +1,110 @@
-// Sample realistic membership data
+
+// ----------------------
+// Column and Member Data
+// ----------------------
+const columnKeys = [
+  "consent",
+  "name",
+  "mailing",
+  "birth",
+  "personalEmail",
+  "personalContact",
+  "institution",
+  "instAddress",
+  "type",
+  "designation",
+  "license",
+  "dateObtained",
+  "instContact",
+  "instEmail",
+  "council",
+  "licenseExp"
+];
+
+let visibleColumns = [
+  "name",
+  "personalEmail",
+  "personalContact",
+  "institution",
+  "type",
+  "designation"
+];
+
+// Sample members (you can keep adding more)
 const members = [
   {
+    consent: "I Agree",
+    name: "Villafranca, Cyril James, Onday",
+    mailing: "Mabini St, Maasin, Iloilo",
+    birth: "1999-07-20",
+    personalEmail: "",
+    personalContact: "",
+    institution: "Colegio de la Purisima Concepcion",
+    instAddress: "Roxas City",
+    type: "Private",
+    designation: "Academic Librarian",
+    license: "0010242",
+    dateObtained: "2022-10-28",
+    instContact: "",
+    instEmail: "",
+    council: "Region VI",
+    licenseExp: ""
+  },
+  {
+    consent: "I Agree",
+    name: "Jose, Miguel Correa",
+    mailing: "42 Maalalahanin St, Teachers Village East, Quezon City",
+    birth: "1988-11-07",
+    personalEmail: "migueljose413@yahoo.com",
+    personalContact: "09420474340",
+    institution: "Mary the Queen College of Quezon City",
+    instAddress: "Commonwealth Avenue, Diliman, Quezon City",
+    type: "Private",
+    designation: "School Librarian",
+    license: "00006464",
+    dateObtained: "2012-11-15",
+    instContact: "N/A",
+    instEmail: "N/A",
+    council: "NCR",
+    licenseExp: ""
+  },
+  {
+    consent: "I Agree",
+    name: "Banjao, Mari Angeli Adriano",
+    mailing: "B32 P3 L3 F1 Kapak St, Dagat Dagatan Ave, Caloocan City",
+    birth: "1984-03-25",
+    personalEmail: "mrsbanjao@gmail.com",
+    personalContact: "09682346032",
+    institution: "Gregoria de Jesús Elementary School",
+    instAddress: "P. Sevilla St. Cor. 9th Ave, Caloocan City",
+    type: "Government",
+    designation: "Master Teacher 1",
+    license: "005570",
+    dateObtained: "2008-12-08",
+    instContact: "09682346032",
+    instEmail: "",
+    council: "NCR",
+    licenseExp: ""
+  },
+  {
+    consent: "I Agree",
+    name: "Lumanas, Chelly Lumayno",
+    mailing: "P3, Sta. Ana, San Francisco, Agusan del Sur",
+    birth: "1984-03-14",
+    personalEmail: "chellylumanas07@gmail.com",
+    personalContact: "09075125901",
+    institution: "Agusan del Sur State College of Agriculture and Technology",
+    instAddress: "San Teodoro, Bunawan, Agusan del Sur",
+    type: "Government",
+    designation: "Academic Librarian",
+    license: "0005360",
+    dateObtained: "2008-01-29",
+    instContact: "09075125901",
+    instEmail: "library@asscat.edu.ph",
+    council: "CAR",
+    licenseExp: ""
+  },
+    {
     consent: "I Agree",
     name: "Villafranca, Cyril James, Onday",
     mailing: "Mabini St, Maasin, Iloilo",
@@ -306,73 +410,86 @@ const members = [
     instEmail: "library@xu.edu.ph",
     council: "Region X",
     licenseExp: "2025-09-25"
-  }
+  }  
+  // Add other members here...
 ];
 
 // ----------------------
-// Render Table Function
+// Render Table
 // ----------------------
 const tbody = document.getElementById("membershipBody");
 
 function renderTable(data) {
   tbody.innerHTML = "";
+
   data.forEach(member => {
     const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${member.consent}</td>
-      <td>${member.name}</td>
-      <td>${member.mailing}</td>
-      <td>${member.birth}</td>
-      <td>${member.personalEmail}</td>
-      <td>${member.personalContact}</td>
-      <td>${member.institution}</td>
-      <td>${member.instAddress}</td>
-      <td>${member.type}</td>
-      <td>${member.designation}</td>
-      <td>${member.license}</td>
-      <td>${member.dateObtained}</td>
-      <td>${member.instContact}</td>
-      <td>${member.instEmail}</td>
-      <td>${member.council}</td>
-      <td>${member.licenseExp}</td>
-    `;
+
+    columnKeys.forEach(key => {
+      const td = document.createElement("td");
+      td.textContent = member[key] || "";
+      td.style.display = visibleColumns.includes(key) ? "" : "none";
+      tr.appendChild(td);
+    });
+
     tbody.appendChild(tr);
+  });
+
+  updateHeaderVisibility();
+}
+
+function updateHeaderVisibility() {
+  const headers = document.querySelectorAll("#membershipTable th");
+
+  columnKeys.forEach((key, index) => {
+    headers[index].style.display = visibleColumns.includes(key) ? "" : "none";
   });
 }
 
-renderTable(members);
+// ----------------------
+// Update Visible Columns from Checkbox
+// ----------------------
+function updateVisibleColumns() {
+  const checkboxes = document.querySelectorAll("#fieldOptions input[type='checkbox']");
+  visibleColumns = [];
+
+  checkboxes.forEach(cb => {
+    if (cb.checked) visibleColumns.push(cb.value);
+  });
+
+  renderTable(filteredMembers); // render with current filtered list
+}
 
 // ----------------------
-// Filter Function
+// Filters
 // ----------------------
+let filteredMembers = members.slice();
+
 function applyFilters() {
   const councilFilter = document.getElementById("filterCouncil").value.toLowerCase();
   const nameFilter = document.getElementById("searchName").value.toLowerCase();
 
-  const filtered = members.filter(member => {
+  filteredMembers = members.filter(member => {
     const matchCouncil = councilFilter === "all" || member.council.toLowerCase() === councilFilter;
     const matchName = member.name.toLowerCase().includes(nameFilter);
     return matchCouncil && matchName;
   });
 
-  renderTable(filtered);
+  renderTable(filteredMembers);
 }
 
 // ----------------------
-// Sortable Columns
+// Sorting
 // ----------------------
-const table = document.getElementById("membershipTable");
 let sortDirection = {};
 
-table.querySelectorAll("th").forEach((th, index) => {
+document.querySelectorAll("#membershipTable th").forEach((th, index) => {
   th.style.cursor = "pointer";
   th.addEventListener("click", () => {
-    const key = th.innerText.replace(/ /g, "").toLowerCase(); // e.g., "Full Name" => "fullname"
-    const dataKey = Object.keys(members[0])[index]; // map column index to member key
+    const dataKey = columnKeys[index];
+    sortDirection[dataKey] = !sortDirection[dataKey];
 
-    sortDirection[dataKey] = !sortDirection[dataKey]; // toggle asc/desc
-
-    members.sort((a, b) => {
+    filteredMembers.sort((a, b) => {
       let valA = a[dataKey] || "";
       let valB = b[dataKey] || "";
       if (valA < valB) return sortDirection[dataKey] ? -1 : 1;
@@ -380,36 +497,40 @@ table.querySelectorAll("th").forEach((th, index) => {
       return 0;
     });
 
-    applyFilters(); // apply current filters after sorting
+    renderTable(filteredMembers);
   });
 });
 
 // ----------------------
-// Export to CSV
+// Export CSV
 // ----------------------
 function exportToCSV() {
-  const rows = [Array.from(table.querySelectorAll("th")).map(th => th.innerText)];
-  tbody.querySelectorAll("tr").forEach(tr => {
-    const cols = Array.from(tr.querySelectorAll("td")).map(td => `"${td.innerText}"`);
-    rows.push(cols);
-  });
-  const csvContent = rows.map(e => e.join(",")).join("\n");
+  const headers = visibleColumns.map(key => 
+    document.querySelector(`#membershipTable th:nth-child(${columnKeys.indexOf(key)+1})`).innerText
+  );
 
-  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const rows = [headers];
+
+  document.querySelectorAll("#membershipBody tr").forEach(tr => {
+    const row = [];
+    visibleColumns.forEach(key => {
+      const index = columnKeys.indexOf(key);
+      row.push(`"${tr.children[index].innerText}"`);
+    });
+    rows.push(row);
+  });
+
+  const csv = rows.map(r => r.join(",")).join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.setAttribute("download", "membership_records.csv");
+  link.download = "membership_records.csv";
   link.click();
 }
 
 // ----------------------
-// Show/Hide Columns Before Print
+// Initial Load
 // ----------------------
-function toggleColumn(colIndex, show) {
-  const allRows = table.querySelectorAll("tr");
-  allRows.forEach(row => {
-    if (row.children[colIndex]) {
-      row.children[colIndex].style.display = show ? "" : "none";
-    }
-  });
-}
+document.addEventListener("DOMContentLoaded", () => {
+  renderTable(members); // default showing all members
+});

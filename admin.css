@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins;
+}
+
+/* LAYOUT */
+.layout{
+    display:flex;
+    height:100vh;
+    background:#ffffff;
+    
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:260px;
+    background:#3b1f1f;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:0.3s ease;
+}
+
+/* FULL HIDE */
+.sidebar.hidden{
+    width:0;
+    overflow:hidden;
+}
+/* Sidebar links */
+.sidebar nav a {
+    text-decoration: none;      /* remove underline */
+    color: inherit;             /* keep original text color */
+}
+
+/* Optional: maintain hover effect without underline */
+.sidebar nav a:hover {
+    text-decoration: none;      /* ensure no underline on hover */
+    color: var(--maroon);       /* or any color you like on hover */
+}
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:20px;
+}
+
+.logo img{
+    width:45px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+}
+
+nav a{
+    padding:12px;
+    margin:4px 0;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    background:#f4c542;
+    color:black;
+}
+
+/* BOTTOM */
+.sidebar-bottom{
+    padding:20px;
+}
+
+.logout{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#f4c542;
+    font-weight:600;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    transition:0.3s ease;
+}
+
+/* TOPBAR */
+.topbar{
+    background:white;
+    padding:20px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ddd;
+}
+
+.menu-btn{
+    font-size:24px;
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+/* ADMIN */
+.admin{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin img{
+    border-radius:50%;
+}
+
+/* CONTENT */
+.content{
+    padding:40px;
+}
+
+.content h1{
+    color:#8b1c1c;
+    margin-bottom:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .sidebar{
+        position:absolute;
+        height:100%;
+        left:-260px;
+        z-index:1000;
+    }
+
+    .sidebar.show{
+        left:0;
+    }
+}

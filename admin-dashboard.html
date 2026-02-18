@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAI Admin Dashboard</title>
+  <link rel="icon" type="image/png" href="LOGO.png" />
+<link rel="stylesheet" href="records.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+            <div class="logo">
+                <img src="LOGO.png">
+                <h2>PLAI</h2>
+            </div>
+
+            <nav>
+                <a href="admin-dashboard.html" class="active">Dashboard</a>
+                <a href="membership.html">Members</a>
+                <a href="records.html">Congress</a>
+                <a href="Attendance.html">Attendance</a>
+                <a href="news.html">News</a>
+                <a href="resources.html">Resources</a>
+            </nav>
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="sidebar-bottom">
+            <button class="logout">Logout</button>
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+            <div class="admin">
+                <span>Admin</span>
+                <img src="https://i.pravatar.cc/40">
+            </div>
+        </header>
+<div class="admin-layout">
+    <div class="main-content">
+        <header class="dashboard-header">
+                    <!-- CONTENT -->
+        <section class="content">
+
+            <h1>Welcome, Admin!</h1>
+            <p>Manage the Philippine Librarians Association efficiently.</p>
+
+        </section>
+    </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
