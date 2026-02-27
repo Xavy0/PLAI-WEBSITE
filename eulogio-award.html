@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History of PLAI</title>
-
-  <link rel="stylesheet" href="plai-pages.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eulogio B. Rodriguez Professional Award - PLAI</title>
+<link rel="stylesheet" href="plai-pages.css">
 <link rel="stylesheet" href="navbar.css">
 </head>
-
 <body>
-
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
@@ -62,10 +59,10 @@
   <a href="awards.html" class="has-arrow">Awards</a>
 
   <div class="dropdown-menu">
-    <a href="#">Cirilio B. Perez Award</a>
-    <a href="#">Eulogio B. Rodriguez Professional Award</a>
-    <a href="#">Gabriel A. Bernardo Leadership Award</a>
-    <a href="#">Hall of Fame Award</a>
+    <a href="cirilio-award.html">Cirilio B. Perez Award</a>
+    <a href="eulogio-award.html">Eulogio B. Rodriguez Professional Award</a>
+    <a href="gabriel-award.html">Gabriel A. Bernardo Leadership Award</a>
+    <a href="hall-of-fame-award.html">Hall of Fame Award</a>
     <a href="OPYA.html">OPYA</a>
   </div>
 </div>
@@ -134,69 +131,73 @@
 </div>
 
 </header>
-
-<!-- CONTENT -->
 <div class="content-wrapper">
 
-  <div class="page-header">
-    <h1>History of PLAI</h1>
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <h1>Eulogio B. Rodriguez Professional Award</h1>
     <p>
-      The Philippine Library Association (PLAI) traces its beginnings to the early
-      1920s, when Filipino librarians recognized the need for professional
-      collaboration and the development of library services in the country.
+      This award is given to a member in recognition of his/her remarkable professionalism 
+      or specific major contribution to Philippine librarianship.
     </p>
-  </div>
+    <span class="post-meta">By webmaster / April 25, 2017</span>
+  </header>
 
-  <div class="content-section">
+  <!-- TABLE SECTION -->
+  <section class="awards-section">
 
-    <article>
-      <p>
-        Between 1920 and 1923, a group of six professional librarians returned to the
-        Philippines from the United States where they received training in library
-        science as government scholarship grantees. They were Gabriel A. Bernardo,
-        Eulogio Rodriguez, Jose Munda, and Cirilo B. Perez from the Wisconsin Library
-        School; Isaac V. Lucero from the University of Illinois; and Isidoro Saniel
-        from the New York State Library School.
-      </p>
-    </article>
+    <div class="table-controls">
+      <div>
+        Show 
+        <select>
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select> entries
+      </div>
 
-    <article>
-      <p>
-        Recognizing the growing importance of popular libraries and the need for an
-        exchange of professional ideas, these librarians approached Dr. Trinidad H.
-        Pardo de Tavera, then Director of the Philippine Library and Museum, and
-        proposed the establishment of a library association.
-      </p>
-    </article>
+      <div>
+        Search:
+        <input type="text" placeholder="Search awardees" id="awardSearch">
+      </div>
+    </div>
 
-    <article>
-      <p>
-        On October 22, 1923, Director Tavera convened a conference of librarians and
-        other individuals interested in organizing an association of libraries.
-        This gathering marked the birth of the Philippine Library Association.
-      </p>
-    </article>
+    <div class="table-wrapper">
+      <table class="members-table" id="awardTable">
+        <thead>
+          <tr>
+            <th>Name of Awardee</th>
+            <th>Year Awarded</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Rosalie B. Faderon</td><td>2013</td></tr>
+          <tr><td>Fe S. Abeleda-Robles</td><td>2010</td></tr>
+          <tr><td>Prudenciano C. Cruz</td><td>2007</td></tr>
+          <tr><td>Milagros Santos-Ong</td><td>2007</td></tr>
+          <tr><td>Loreto M. Seriña</td><td>2005</td></tr>
+          <tr><td>Rosvida R. Rosal</td><td>2002</td></tr>
+          <tr><td>The Board for Librarians</td><td>2001</td></tr>
+          <tr><td>Ursula G. Picache, Ph. D.</td><td>2000</td></tr>
+          <tr><td>Vicente S. Hernandez</td><td>2000</td></tr>
+          <tr><td>Corazon M. Nera</td><td>1995</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <article>
-      <p>
-        During the same meeting, the first set of officers was elected. Dr. Trinidad
-        H. Pardo de Tavera was unanimously elected President. Mr. Jose Zurbito became
-        Vice-President, while Mr. Cirilo B. Perez and Mrs. Rosa Abriol were elected
-        Secretary and Treasurer.
-      </p>
-    </article>
+    <div class="table-pagination">
+      <span>Showing 1 to 10 of 19 entries</span>
+      <div>
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
+    </div>
 
-    <article>
-      <p>
-        Of the thirty-three charter members, five were Americans while the rest were
-        Filipino library staff members. At the time, library resources in Manila
-        were limited and largely unorganized.
-      </p>
-    </article>
-
-  </div>
-
+  </section>
 </div>
+
+<!-- JS: search filter -->
+<script src="Search.js"></script>
 
 </body>
 </html>
