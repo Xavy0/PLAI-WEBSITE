@@ -12,6 +12,9 @@
 /* =======================
    GLOBAL
 ======================= */
+/* =======================
+   GLOBAL
+======================= */
 body {
   margin: 0;
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
@@ -19,224 +22,19 @@ body {
   color: var(--text-main);
 }
 
-/* =======================
-   NAVBAR
-======================= */
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  padding: 15px 40px;
-  background: var(--bg-white);
-  border-bottom: 1px solid var(--border-light);
-  flex-wrap: wrap;
-}
 
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo img {
-  width: 55px;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.main-text {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.sub-text {
-  font-size: 12px;
-  color: var(--primary);
-}
-
-/* NAV LINKS */
-.navbar nav {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  gap: 10px 18px;
-  flex: 1;
-}
-
-.navbar nav a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 14px;
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.navbar nav a:hover {
-  color: var(--primary);
-}
-/* Only target submenu inside another dropdown */
-.nav-dropdown .dropdown-menu .nav-dropdown {
-  position: relative;
-}
-
-/* Hide ONLY the nested submenu */
-.nav-dropdown .dropdown-menu .nav-dropdown > .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  background: white;
-  min-width: 220px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-/* Show nested submenu ONLY when hovering PLAI Congress */
-.nav-dropdown .dropdown-menu .nav-dropdown:hover > .dropdown-menu {
-  display: block;
-}
-/* ARROW */
-.has-arrow {
-  position: relative;
-  padding-right: 14px;
-}
-
-.has-arrow::after {
-  content: "▾";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary);
-}
-
-/* NAV ACTION */
-.nav-actions button {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 20px 0 20px 0;
-  font-family: inherit;
-  font-weight: 600;
-}
-
-.nav-actions button:hover {
-  background: var(--primary-dark);
-}
-
-/* =======================
-   HAMBURGER
-======================= */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  margin-top: -55px;
-}
-
-.nav-toggle-label span {
-  width: 25px;
-  height: 3px;
-  background: var(--primary);
-}
-/* =======================
-   MOBILE RESPONSIVE
-======================= */
-@media (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-toggle-label {
-    display: flex;
-    margin-left: auto;
-  }
-
-  .navbar nav,
-  .nav-actions {
-    display: none;
-    width: 100%;
-  }
-
-  .nav-toggle:checked ~ nav,
-  .nav-toggle:checked ~ .nav-actions {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navbar nav {
-    grid-template-columns: 1fr;
-  }
-}
-/* =======================
-   DROPDOWN (SAFE)
-======================= */
-.nav-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* dropdown box */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  min-width: 220px;
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  z-index: 999;
-  padding: 6px 0;
-}
-
-/* dropdown links */
-.dropdown-menu a {
-  display: block;
-  padding: 10px 14px;
-  font-size: 13px;
-  color: var(--text-muted);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background: #f5f5f5;
-  color: var(--primary);
-}
-
-/* show on hover */
-.nav-dropdown:hover .dropdown-menu {
-  display: block;
-}
 /* =======================
    PAGE WRAPPERS
 ======================= */
 .submission-wrapper,
 .officers-wrapper,
 .content-wrapper {
-  max-width: 950px;
-  margin: 50px auto;
-  padding: 40px 50px;
-  background: var(--bg-white);
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #fdf5f5; /* light red background */
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
 }
 
 /* =======================
@@ -364,16 +162,6 @@ body {
    RESPONSIVE
 ======================= */
 @media (max-width: 768px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .submission-wrapper,
   .officers-wrapper,
@@ -733,6 +521,38 @@ background:#fff;
 padding:5px;
 border:1px solid #eee;
 }
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+@media (max-width: 768px) {
+
+  .plai-partners-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .plai-partners-title {
+    font-size: 28px;
+  }
+
+  .plai-partners-subtitle {
+    font-size: 16px;
+  }
+
+  .plai-partner-card {
+    padding: 20px;
+  }
+
+  .plai-partner-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .plai-partner-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+}
 /* =====================
    PLAI CONTACT SECTION - RED THEME
 ===================== */
@@ -761,7 +581,7 @@ border:1px solid #eee;
 
 .plai-contact-grid {
     display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -805,4 +625,217 @@ border:1px solid #eee;
 .plai-contact-btn:hover {
     background: #6f1515dc; /* slightly transparent dark red */
     transform: translateY(-2px);
+}
+/* =====================
+   MOBILE RESPONSIVE FIX
+===================== */
+
+@media (max-width: 768px) {
+
+    .plai-contact-section {
+        margin: 20px 15px 40px 15px;
+        padding: 15px;
+    }
+
+    .plai-contact-title {
+        font-size: 30px;
+    }
+
+    .plai-contact-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .plai-contact-grid {
+        grid-template-columns: repeat(1, 1fr); /* ALWAYS 2 per row */
+        gap: 15px;
+    }
+
+    .plai-contact-card {
+        padding: 20px;
+    }
+
+    .plai-contact-card h3 {
+        font-size: 18px;
+    }
+
+    .plai-contact-card p {
+        font-size: 14px;
+    }
+
+    .plai-contact-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+/* ===== PLAI AWARDS / RED THEME ===== */
+
+/* Section styling */
+.plai-section {
+    max-width: 1100px;
+    margin: 80px auto 60px auto;
+    padding: 30px;
+    background: #fdf5f5;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.plai-title {
+    font-size: 44px;
+    color: #6f1515;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.plai-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 45px;
+}
+
+/* Grid cards */
+.plai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.plai-card {
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.plai-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.plai-card h3 {
+    color: #6f1515;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.plai-card p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.plai-btn {
+    display: inline-block;
+    background: #6f1515;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.plai-btn:hover {
+    background: #6f1515dc;
+    transform: translateY(-2px);
+}
+
+/* Table */
+.plai-table-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.plai-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+.plai-table th,
+.plai-table td {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.plai-table th {
+    background: #6f1515;
+    color: white;
+    text-align: left;
+}
+
+.plai-table tbody tr:nth-child(even) {
+    background: #fff0f0;
+}
+
+.plai-table tbody tr:hover {
+    background: #ffe6e6;
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+/* Search input */
+#awardSearch {
+    padding: 10px 15px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+/* ===== PLAI SINGLE AWARD PAGE ===== */
+
+.single-award-wrapper {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #fdf5f5; /* light red background */
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.single-award-header {
+    text-align: center;  /* centers all content inside */
+    margin-bottom: 20px; /* optional spacing below header */
+}
+.single-award-header h1 {
+    font-size: 42px;
+    color: #6f1515;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.single-award-header p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.single-award-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* IMAGE PLACEHOLDER */
+.single-award-image {
+    width: 250px;
+    height: 250px;
+    background: #ddd; /* placeholder color */
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* CONTENT TEXT */
+.single-award-content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
 }
