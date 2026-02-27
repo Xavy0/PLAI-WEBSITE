@@ -200,3 +200,56 @@ registrationForm.addEventListener("submit", function(e){
   formFieldsWrapper.classList.add("disabled");
   closeForm();
 });
+// MOBILE NAV DROPDOWN
+document.querySelectorAll(".nav-dropdown > a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    if (window.innerWidth <= 900) {
+      const parent = this.parentElement;
+      const isOpen = parent.classList.contains("active");
+
+      // close all dropdowns
+      document.querySelectorAll(".nav-dropdown").forEach(menu => {
+        menu.classList.remove("active");
+      });
+
+      // if it was closed, open it
+      if (!isOpen) {
+        e.preventDefault();
+        parent.classList.add("active");
+      }
+      // if already open → allow link navigation
+    }
+  });
+});
+
+// CAROUSEL
+const track = document.querySelector(".carousel-track");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let position = 0;
+
+// Width of one slide (or adjust to your slide width)
+const slideWidth = 380;
+
+nextBtn.addEventListener("click", () => {
+  position -= slideWidth;
+
+  // Prevent going too far
+  if (Math.abs(position) > track.scrollWidth - track.clientWidth) {
+    position = 0; // loop back to start
+  }
+
+  track.style.transform = `translateX(${position}px)`;
+});
+
+prevBtn.addEventListener("click", () => {
+  position += slideWidth;
+
+  // Prevent going past first slide
+  if (position > 0) {
+    position = -(track.scrollWidth - track.clientWidth); // loop to end
+  }
+
+  track.style.transform = `translateX(${position}px)`;
+});

@@ -32,33 +32,31 @@
 <nav>
 
   <a href="index.html">Home</a>
-<div class="nav-dropdown">
-  <a href="Plai-congress.html" class="has-arrow">Congress</a>
-
-  <div class="dropdown-menu">
-    <a href="#">2025 PLAI National Congress</a>
-    <a href="#">PLAI Congress 2024</a>
-    <a href="#">PLAI Congress 2023</a>
-    <a href="#">PLAI Congress 2022</a>
-    <a href="#">PLAI Congress 2021</a>
-    <a href="#">PLAI Congress 2020</a>
-    <a href="#">PLAI Congress 2019</a>
-    <a href="#">PLAI Congress 2018</a>
-    <a href="#">PLAI Congress 2017</a>
+    <div class="nav-dropdown">
+  <a href="about.html" class="has-arrow">About of PLAI</a>
+      <div class="dropdown-menu">
+        <a href="#">History</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
   </div>
-</div>
-
-  <!-- OFFICERS DROPDOWN -->
+    <!-- OFFICERS DROPDOWN -->
   <div class="nav-dropdown">
     <a href="officers.html" class="has-arrow">Officers</a>
     <div class="dropdown-menu">
-      <a href="#">NBOT Executive Officers</a>
-      <a href="#">House of Delegates</a>
-      <a href="#">Members of the BOT</a>
+      <a href="regional-submission.html">Regional</a>
+      <a href="nbot-executive.html">NBOT Executive Officers</a>
+      <a href="house-delegates.html">House of Delegates</a>
+      <a href="members-bot.html">Members of the BOT</a>
+    </div>
+  </div>  
+      <div class="nav-dropdown">
+  <a href="Plai-registration.html" class="has-arrow">Membership</a>
+        <div class="dropdown-menu">
+      <a href="lifetime-members.html">Lifetime Members</a>
     </div>
   </div>
 
-  <div class="nav-dropdown">
+    <div class="nav-dropdown">
   <a href="awards.html" class="has-arrow">Awards</a>
 
   <div class="dropdown-menu">
@@ -66,46 +64,63 @@
     <a href="#">Eulogio B. Rodriguez Professional Award</a>
     <a href="#">Gabriel A. Bernardo Leadership Award</a>
     <a href="#">Hall of Fame Award</a>
-    <a href="#">OPYA</a>
+    <a href="OPYA.html">OPYA</a>
   </div>
 </div>
-  <a href="#">Regional</a>
-  <div class="nav-dropdown">
-  <a href="about.html" class="has-arrow">About of PLAI</a>
-      <div class="dropdown-menu">
-      <a href="#">Partners</a>
-      <a href="#">Contact Us</a>
-    </div>
-  </div>
-    <div class="nav-dropdown">
-  <a href="Plai-registration.html" class="has-arrow">Membership</a>
-        <div class="dropdown-menu">
-      <a href="lifetime-members.html">Lifetime Members</a>
-    </div>
-  </div>
-  <a href="call-for-papers.html">Call for Papers</a>
-      <div class="nav-dropdown">
-  <a href="national-book-week.html" class="has-arrow">National Book Week</a>
-        <div class="dropdown-menu">
-      <a href="#">90th National Book Week Celebration</a>
-    </div>
-  </div>
-  <a href="activities.html">Activities</a>
+<!-- EVENTS DROPDOWN -->
 <div class="nav-dropdown">
-  <a href="newsletter.html" class="has-arrow">PLAI Newsletter</a>
+  <a href="activities.html" class="has-arrow">Events</a>
 
   <div class="dropdown-menu">
+
+    <!-- PLAI CONGRESS SUB DROPDOWN -->
+    <div class="nav-dropdown">
+      <a href="Plai-congress.html" class="has-arrow">PLAI Congress</a>
+
+      <div class="dropdown-menu">
+        <a href="#">2025 PLAI National Congress</a>
+        <a href="#">PLAI Congress 2024</a>
+        <a href="#">PLAI Congress 2023</a>
+        <a href="#">PLAI Congress 2022</a>
+        <a href="#">PLAI Congress 2021</a>
+        <a href="#">PLAI Congress 2020</a>
+        <a href="#">PLAI Congress 2019</a>
+        <a href="#">PLAI Congress 2018</a>
+        <a href="#">PLAI Congress 2017</a>
+      </div>
+    </div>
+
+    <!-- NATIONAL BOOK WEEK SUB DROPDOWN -->
+    <div class="nav-dropdown">
+      <a href="national-book-week.html" class="has-arrow">National Book Week</a>
+
+      <div class="dropdown-menu">
+        <a href="#">90th National Book Week Celebration</a>
+      </div>
+    </div>
+    <a href="#">Outreach Programs</a>
+
+  </div>
+</div>
+
+<div class="nav-dropdown">
+  <a href="newsletter.html" class="has-arrow">Publications</a>
+
+  <div class="dropdown-menu">
+    <a href="#">PLAI journal</a>
     <a href="#">Newsletter 2024</a>
     <a href="#">PLAI Newsletter Jan-Oct 2019</a>
     <a href="#">PLAI Newsletter 2017</a>
     <a href="#">PLAI Newsletter 2016</a>
   </div>
 </div>
+
+  <a href="partners.html">Partners</a>
       <div class="nav-dropdown">
   <a href="#" class="has-arrow">Archive</a>
           <div class="dropdown-menu">
-      <a href="#">Past Presidents</a>
-      <a href="#">2022-2023 Officers</a>
+      <a href="past-presidents.html">Past Presidents</a>
+      <a href="officers-2022-2023.html">2022-2023 Officers</a>
     </div>
   </div>
 </nav>
@@ -262,11 +277,11 @@
 <section class="benefits">
   <div class="benefits-left">
     <h2>Members Benefits</h2>
-    <ul>
-      <li>Continuing Education</li>
-      <li>Networking Opportunities</li>
-      <li>Exclusive Resources</li>
-    </ul>
+<ul class="benefits-list">
+  <li>Continuing Education</li>
+  <li>Networking Opportunities</li>
+  <li>Exclusive Resources</li>
+</ul>
     <div class="benefit-buttons">
       <button class="primary">Join PLAI</button>
       <button class="secondary">Contact Us</button>
@@ -314,55 +329,6 @@
   </div>
   <p class="footer-copy">© 2026 PLAI. All rights reserved.</p>
 </footer>
-<script id="ah7v3s">
-document.querySelectorAll(".nav-dropdown > a").forEach(link => {
-  link.addEventListener("click", function(e) {
-
-    if (window.innerWidth <= 900) {
-
-      const parent = this.parentElement;
-      const isOpen = parent.classList.contains("active");
-
-      // if dropdown not open yet → open it
-      if (!isOpen) {
-        e.preventDefault();
-
-        // close others
-        document.querySelectorAll(".nav-dropdown").forEach(menu => {
-          menu.classList.remove("active");
-        });
-
-        parent.classList.add("active");
-      }
-
-      // if already open → allow navigation (NO preventDefault)
-    }
-
-  });
-});
-
-
-const track = document.querySelector(".carousel-track");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
-let position = 0;
-
-nextBtn.onclick = () => {
-  position -= 380;
-  if (Math.abs(position) > track.scrollWidth - track.clientWidth) {
-    position = 0;
-  }
-  track.style.transform = `translateX(${position}px)`;
-};
-
-prevBtn.onclick = () => {
-  position += 380;
-  if (position > 0) {
-    position = -(track.scrollWidth - track.clientWidth);
-  }
-  track.style.transform = `translateX(${position}px)`;
-};
-</script>
+<script src="script.js"></script>
 </body>
 </html>

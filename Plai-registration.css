@@ -103,7 +103,7 @@ body {
 /* NAV LINKS */
 .navbar nav {
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
   gap: 10px 18px;
   flex: 1;
 }

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <title>PLAI Regional Page Submission</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>History of PLAI</title>
+  <meta charset="UTF-8">
 
   <link rel="stylesheet" href="plai-pages.css">
+  <link rel="icon" href="Images/LOGO.png">
+
+<style>
+.dynamic-fields { display:none; }
+</style>
+
 </head>
-
 <body>
-
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
@@ -134,68 +138,148 @@
 
 </header>
 
-<!-- CONTENT -->
-<div class="content-wrapper">
+<!-- PAGE WRAPPER -->
+<div class="submission-wrapper">
 
-  <div class="page-header">
-    <h1>History of PLAI</h1>
-    <p>
-      The Philippine Library Association (PLAI) traces its beginnings to the early
-      1920s, when Filipino librarians recognized the need for professional
-      collaboration and the development of library services in the country.
-    </p>
-  </div>
+<header class="page-header">
+  <h1>Regional Page Submission</h1>
+  <p>Regional Councils may upload pubmats, announcements, and officers materials.</p>
+</header>
 
-  <div class="content-section">
+<form class="submission-form">
 
-    <article>
-      <p>
-        Between 1920 and 1923, a group of six professional librarians returned to the
-        Philippines from the United States where they received training in library
-        science as government scholarship grantees. They were Gabriel A. Bernardo,
-        Eulogio Rodriguez, Jose Munda, and Cirilo B. Perez from the Wisconsin Library
-        School; Isaac V. Lucero from the University of Illinois; and Isidoro Saniel
-        from the New York State Library School.
-      </p>
-    </article>
+<!-- SUBMITTER INFO -->
+<section class="form-section">
+<h2>Submitted By</h2>
 
-    <article>
-      <p>
-        Recognizing the growing importance of popular libraries and the need for an
-        exchange of professional ideas, these librarians approached Dr. Trinidad H.
-        Pardo de Tavera, then Director of the Philippine Library and Museum, and
-        proposed the establishment of a library association.
-      </p>
-    </article>
-
-    <article>
-      <p>
-        On October 22, 1923, Director Tavera convened a conference of librarians and
-        other individuals interested in organizing an association of libraries.
-        This gathering marked the birth of the Philippine Library Association.
-      </p>
-    </article>
-
-    <article>
-      <p>
-        During the same meeting, the first set of officers was elected. Dr. Trinidad
-        H. Pardo de Tavera was unanimously elected President. Mr. Jose Zurbito became
-        Vice-President, while Mr. Cirilo B. Perez and Mrs. Rosa Abriol were elected
-        Secretary and Treasurer.
-      </p>
-    </article>
-
-    <article>
-      <p>
-        Of the thirty-three charter members, five were Americans while the rest were
-        Filipino library staff members. At the time, library resources in Manila
-        were limited and largely unorganized.
-      </p>
-    </article>
-
-  </div>
-
+<div class="form-group">
+<label>Region / Chapter</label>
+<select>
+<option disabled selected>Select Region</option>
+<option>NCR</option>
+<option>Region I</option>
+<option>Region II</option>
+<option>Region III</option>
+<option>Region IV-A</option>
+<option>Region IV-B</option>
+<option>Region V</option>
+<option>Region VI</option>
+<option>Region VII</option>
+<option>Region VIII</option>
+<option>Region IX</option>
+<option>Region X</option>
+<option>Region XI</option>
+<option>Region XII</option>
+<option>CAR</option>
+<option>BARMM</option>
+</select>
 </div>
+
+<div class="form-group">
+<label>Officer Name</label>
+<input type="text" placeholder="Full Name">
+</div>
+
+<div class="form-group">
+<label>Position</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email">
+</div>
+
+</section>
+
+<!-- POST TYPE -->
+<section class="form-section">
+<h2>Submission Type</h2>
+
+<div class="form-group">
+<label>Select Type</label>
+<select id="typeSelect" onchange="showFields()">
+<option disabled selected>Select</option>
+<option value="pubmat">Pubmat Upload</option>
+<option value="announce">Announcement</option>
+<option value="officers">Officers Pubmat</option>
+</select>
+</div>
+</section>
+
+<!-- PUBMAT -->
+<section id="pubmat" class="form-section dynamic-fields">
+<h2>Pubmat Details</h2>
+
+<div class="form-group">
+<label>Title</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Description</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group">
+<label>Upload Pubmat</label>
+<input type="file">
+</div>
+
+</section>
+
+<!-- ANNOUNCEMENT -->
+<section id="announce" class="form-section dynamic-fields">
+<h2>Announcement Details</h2>
+
+<div class="form-group">
+<label>Announcement Title</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Details</label>
+<textarea></textarea>
+</div>
+
+<div class="form-group">
+<label>Event Date</label>
+<input type="date">
+</div>
+
+</section>
+
+<!-- OFFICERS -->
+<section id="officers" class="form-section dynamic-fields">
+<h2>Officers Pubmat</h2>
+
+<div class="form-group">
+<label>Term / Year</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Upload Officers Pubmat</label>
+<input type="file">
+</div>
+
+</section>
+
+<div class="form-submit">
+<button type="submit">Submit</button>
+</div>
+
+</form>
+</div>
+
+<script>
+function showFields(){
+document.querySelectorAll('.dynamic-fields').forEach(el=>el.style.display="none");
+let type=document.getElementById("typeSelect").value;
+document.getElementById(type).style.display="block";
+}
+</script>
 
 </body>
 </html>
+```
