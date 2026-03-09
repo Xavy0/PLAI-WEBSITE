@@ -256,6 +256,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+    align-items: center;    /* center horizontally */
+  text-align: center;     /* optional, center text */
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
@@ -504,119 +506,62 @@ footer a:hover {
 
 
 
-/* ==============================
-   EVENTS CAROUSEL — PLAI THEME FIXED
-   ============================== */
-
 .events {
-  padding: 70px 0;
-  background: var(--bg-light);
+  padding: 50px 0;
   text-align: center;
+  background: #f9f9f9;
 }
 
 .events h2 {
   font-size: 32px;
-  margin-bottom: 45px;
-  color: var(--text-main);
+  margin-bottom: 40px;
+  color: #6f1515;
 }
 
-/* CENTER THE CAROUSEL */
 .carousel {
-  position: relative;
   overflow: hidden;
-  max-width: 1100px;   /* ⭐ KEY FIX */
-  margin: auto;        /* ⭐ CENTER */
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* TRACK */
 .carousel-track {
   display: flex;
-  gap: 30px;
-  transition: transform 0.5s ease;
+  gap: 20px;
+  transition: transform 0.5s linear;
 }
 
-/* CARD SIZE FIX */
 .event-card {
-  flex: 0 0 320px;     /* ⭐ FIXED WIDTH */
-  background: var(--bg-white);
+  flex: 0 0 300px;
+  background: white;
   border-radius: 12px;
+  border: 1px solid #ddd;
   overflow: hidden;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.event-card:hover {
-  transform: translateY(-6px);
-}
-
-/* IMAGE */
 .event-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-/* CONTENT */
 .event-content {
-  padding: 22px;
+  padding: 15px;
   text-align: left;
 }
 
 .event-content h3 {
-  margin-bottom: 10px;
-  color: var(--text-main);
+  margin-bottom: 8px;
+  color: #6f1515;
 }
 
 .event-content p {
-  color: var(--text-muted);
-  margin-bottom: 18px;
   font-size: 14px;
+  color: #555;
 }
 
-/* BUTTON */
-.event-content button {
-  background: var(--primary);
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.event-content button:hover {
-  background: var(--primary-dark);
-}
-
-/* ARROWS */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary);
-  border: none;
-  font-size: 20px;
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.prev { left: -15px; }
-.next { right: -15px; }
-
-/* MOBILE */
-@media(max-width: 768px){
-  .carousel {
-    max-width: 100%;
-  }
-
+@media(max-width:768px){
   .event-card {
-    flex: 0 0 85%;
-  }
-
-  .carousel-btn {
-    display: none;
+    flex: 0 0 90%;
   }
 }

@@ -221,35 +221,40 @@ document.querySelectorAll(".nav-dropdown > a").forEach(link => {
     }
   });
 });
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
 
-// CAROUSEL
-const track = document.querySelector(".carousel-track");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
-let position = 0;
-
-// Width of one slide (or adjust to your slide width)
-const slideWidth = 380;
-
-nextBtn.addEventListener("click", () => {
-  position -= slideWidth;
-
-  // Prevent going too far
-  if (Math.abs(position) > track.scrollWidth - track.clientWidth) {
-    position = 0; // loop back to start
-  }
-
-  track.style.transform = `translateX(${position}px)`;
+// Clone first slides to end for seamless loop
+slides.forEach(slide => {
+  const clone = slide.cloneNode(true);
+  track.appendChild(clone);
 });
 
-prevBtn.addEventListener("click", () => {
-  position += slideWidth;
+let index = 0;
+const slideCount = slides.length;
+let slideWidth = slides[0].getBoundingClientRect().width + 20; // width + gap
 
-  // Prevent going past first slide
-  if (position > 0) {
-    position = -(track.scrollWidth - track.clientWidth); // loop to end
+function moveSlide() {
+  index++;
+  track.style.transition = 'transform 0.5s linear';
+  track.style.transform = `translateX(${-index * slideWidth}px)`;
+
+  // Reset to start seamlessly
+  if (index >= slideCount) {
+    setTimeout(() => {
+      track.style.transition = 'none';
+      index = 0;
+      track.style.transform = `translateX(0)`;
+    }, 500); // must match transition duration
   }
+}
 
-  track.style.transform = `translateX(${position}px)`;
+// Auto-slide every 3 seconds
+setInterval(moveSlide, 3000);
+
+// Update width on resize
+window.addEventListener('resize', () => {
+  slideWidth = slides[0].getBoundingClientRect().width + 20;
+  track.style.transition = 'none';
+  track.style.transform = `translateX(${-index * slideWidth}px)`;
 });
